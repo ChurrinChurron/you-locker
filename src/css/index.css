@@ -1,0 +1,692 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap');
+
+:root {
+    
+    /* Colores */
+
+    --blanco: rgb(255,255,255);
+    --anaranjado: rgb(252, 155, 4);
+    --azul: rgb(20, 108, 180);
+    --azul-oscuro: rgb(32, 44, 80);
+    --gris-claro: rgb(240, 240, 240);
+    --gris: rgb(213, 212, 212);
+    --negro: rgb(0,0,0);
+    --azul-osc-gradient: linear-gradient(0deg, rgba(32,44,80,0.7) 100%, rgba(0,212,255,0) 100%);
+    --negro-op: linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%);
+    --negro-op-dos: linear-gradient( rgba(0, 0, 0, 0.3) 100%, rgba(0, 0, 0, 0.2)100%);
+
+    /* Tipografía */
+
+    --poppins: "Poppins", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100dvh;
+    font-family: var(--poppins);
+    background: var(--blanco);
+}
+
+/* ----NAV---- */
+
+.nav__desktop {
+    display: none;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 1.5em; 
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background: var(--blanco);
+    box-shadow: 0 0 4px 3px var(--gris);
+}
+
+#navLogo {
+    width: 5.5em;
+}
+
+.nav__btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav__btn i {
+    font-size: 2.2em;
+    color: var(--azul-oscuro);
+}
+
+.nav__movil {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    padding: 1.4em 2em;
+    z-index: 2;
+    background: var(--azul);
+    color: var(--blanco);
+    transform: translateX(100%);
+    transition: .4s;
+}
+
+.nav__movil.abrir {
+    transform: translateX(0%);
+}
+
+.cerr__btn {
+    margin-right: auto;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.cerr__btn i {
+    font-size: 2em;
+    color: var(--blanco);
+}
+
+.movil__links {
+    margin-top: 5em;
+}
+
+.movil__links a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-block: 1.6em;
+    color: var(--blanco);
+}
+
+.movil__links #linkCotizar {
+    width: 10em;
+    margin: 0 auto;
+    padding: .5em 1em;
+    background: var(--anaranjado);
+}
+
+/* ----HEADER---- */
+
+.header__content {
+    height: 45em;
+    padding: 11em 1.5em 0 1.5em;
+    background-image: var(--negro-op), url(../../assets/fondo-header.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.header__content h1 {
+    font-size: clamp(2.2rem, -.5rem + 7vw, 3rem);
+    text-align: center;
+    color: var(--blanco);
+}
+
+#headerLinea {
+    width: 9em;
+    margin: 1.5em auto;
+}
+
+.header__content h2 {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: var(--blanco);
+}
+
+main img, footer img {
+    width: 100%;
+}
+
+/* ----NOSOTROS---- */
+
+.nosotros {
+    padding: 4em 1.5em;
+}
+
+.nosotros img {
+    width: 100%;
+    max-width: 30em;
+    margin: 0 auto;
+    display: block;
+}
+
+.nosotros__texto {
+    margin-top: 4em;
+    text-align: center;
+}
+
+.nosotros__texto h2 {
+    position: relative;
+    margin-bottom: 2em;
+    text-align: center;
+    font-size: 1.6em;
+    color: var(--azul-oscuro);
+}
+
+.nosotros__texto h2::after {
+    content: "";
+    position: absolute;
+    top: 1.6em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4em;
+    height: .120em;
+    background: var(--anaranjado);
+}
+
+.nosotros__texto p {
+    font-size: .9em;
+    line-height: 1.7em;
+}
+
+/* ----SERVICIOS---- */
+
+.servicios {
+    padding: 4em 1.5em;
+    background: var(--gris-claro);
+}
+
+.servicios h2 {
+    position: relative;
+    margin-bottom: 3em;
+    text-align: center;
+    font-size: 1.6em;
+    color: var(--azul-oscuro);
+}
+
+.servicios h2::after {
+    content: "";
+    position: absolute;
+    top: 1.6em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4em;
+    height: .120em;
+    background: var(--anaranjado);
+}
+
+.servicios__cajas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.cajas__content {
+    max-width: 30em;
+    height: 20em;
+    padding: 3em 2em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    color: var(--blanco);
+}
+
+.cajas__content h3 {
+    margin-bottom: 1em;
+    font-size: 1.4em;
+}
+
+.cajas__content p {
+    line-height: 1.6em;
+    font-size: .9em;
+}
+
+.cajas__content--mar {
+    background-image: var(--azul-osc-gradient), url(../../assets/envio-mar.webp);
+}
+
+.cajas__content--aer {
+    background-image: var(--azul-osc-gradient), url(../../assets/envio-aereo.webp);
+}
+
+.cajas__content--paq {
+    background-image: var(--azul-osc-gradient), url(../../assets/compras.webp);
+}
+
+/* ----BENEFICIOS---- */
+
+.beneficios {
+    padding: 4em 2em;
+}
+
+.beneficios h2 {
+    position: relative;
+    margin-bottom: 3em;
+    text-align: center;
+    font-size: 1.6em;
+    color: var(--azul-oscuro);
+}
+
+.beneficios h2::after {
+    content: "";
+    position: absolute;
+    top: 1.6em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4em;
+    height: .120em;
+    background: var(--anaranjado);
+}
+
+.beneficios__cajas {
+    max-width: 30em;
+    margin: 0 auto;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+}
+
+.beneficios__content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5em;
+
+}
+
+.beneficios__content img {
+    width: 3.5em;
+}
+
+.beneficios__texto h3 {
+    margin-bottom: .5em;
+    color: var(--azul-oscuro);
+}
+
+.beneficios__texto p {
+    font-size: .9em;
+    line-height: 1.7em;
+}
+
+/* ----COTIZAR---- */
+
+.cotizacion {
+    padding: 4em 1.5em;
+    background-image: var(--azul-osc-gradient), url(../../assets/fondo-cotizar.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.cotizacion h2 {
+    position: relative;
+    margin-bottom: 3em;
+    text-align: center;
+    font-size: 1.450em;
+    color: var(--blanco);
+}
+
+.cotizacion h2::after {
+    content: "";
+    position: absolute;
+    top: 1.6em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4em;
+    height: .120em;
+    background: var(--anaranjado);
+}
+
+.cotizacion form {
+    max-width: 30em;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5em;
+    background: rgba(252, 252, 252, 0.2);
+    border-radius: .5em;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.cotizacion form input {
+    width: 100%;
+    border: none;
+    outline: none;
+    margin-block: .5em;
+    padding: .7em .5em;
+    border-radius: .4em;
+    font-family: var(--poppins);
+    font-size: .9em;
+}
+
+.cotizacion form input[type=submit] {
+    font-weight: 600;
+    background: var(--anaranjado);
+    color: var(--blanco);
+    cursor: pointer;
+    transition: .4s;
+}
+
+.cotizacion form input[type=submit]:hover {
+    background: var(--azul-oscuro);
+}
+
+/* ----MAPA---- */
+
+.mapa iframe{
+    width: 100%;
+    height: 30em;
+}
+
+/* ----FOOTER---- */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+    padding: 5em 3em;
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+}
+
+.footer__logo img {
+    width: 16em;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer__logo h3{
+    margin-top: 1.5em;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.footer__datos {
+    text-align: center;
+}
+
+.datos__conten {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-block: 1em;
+}
+
+.datos__conten i {
+    color: var(--anaranjado);
+}
+
+.datos__conten:nth-child(1) i {
+    margin-right: .6em;
+}
+
+.datos__conten:nth-child(3) i, 
+.datos__conten:nth-child(4) i {
+    margin-right: .6em;
+}
+
+.datos__conten h4 {
+    font-weight: 600;
+    font-size: 1em;
+}
+
+#redesTexto, #appTexto {
+    text-align: center;
+}
+
+.redes__soc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5em 0;
+}
+
+.redes__soc a i {
+    font-size: 1.8em;
+    color: var(--blanco);
+    transition: .4s;
+}
+
+.redes__soc a i:hover {
+    color: var(--anaranjado);
+}
+
+#appTexto {
+    margin-bottom: 1.5em;
+}
+
+.redes__app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.redes__app a img {
+    width: 7.5em;
+}
+
+@media screen and (width >= 758px) {
+
+    /* ----NAV---- */
+
+    #navLogo {
+        width: 6em;
+    }
+    
+    .nav__btn {
+        display: none;
+    }
+
+    .nav__desktop {
+        display: flex;
+        align-items: center;
+        gap: 2em;
+    }
+
+    .nav__desktop a {
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        font-weight: 600;
+        color: var(--azul-oscuro);
+        transition: .4s;
+    }
+
+    .nav__desktop a:hover {
+        border-bottom: 2px solid var(--anaranjado);
+    }
+
+    #linkCotizar {
+        padding: .5em 1em;
+        background: var(--anaranjado);
+        color: var(--blanco);
+        transition: .4s;
+    }
+
+    #linkCotizar:hover {
+        background: var(--azul-oscuro);
+        border-bottom: 2px solid transparent;
+    }
+}
+
+@media screen and (width >= 1024px) {
+
+    /* ----NAV---- */
+
+    nav {
+        padding: 1em 8em;
+    }
+
+    /* ----HEADER---- */
+
+    .header__content {
+        height: 43em;
+        padding: 12em 3em 0 4em;
+        background-image: var(--negro-op-dos), url(../../assets/fondo-header.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /* ----HEADER---- */
+
+    .header__content h1 {
+        width: 15em;
+        text-align: left;
+        color: var(--blanco);
+    }
+
+    #headerLinea {
+        width: 8em;
+        border: none;
+        height: .1em;
+        margin: 1.5em 0;
+        background: var(--blanco);
+    }
+
+    .header__content h2 {
+        width: 34em;
+        text-align: left;
+        font-size: 1.1em;
+        font-weight: 400;
+        color: var(--blanco);
+    }
+
+    /* ----NOSOTROS---- */
+
+    .nosotros {
+        display: flex;
+        justify-content: center;
+        gap: 4em;
+        max-width: 65em;
+        margin: 0 auto;
+    }
+
+    .nosotros__texto {
+        text-align: left;
+    }
+
+    .nosotros__texto h2 {
+        text-align: left;
+        font-size: 1.8em;
+    }
+
+    .nosotros__texto h2::after {
+        left: 0;
+        transform: translateX(0);
+        width: 3em;
+        height: .110em;
+    }
+
+    /* ----SERVICIOS---- */
+
+    .servicios h2 {
+        font-size: 1.8em;
+    }
+    
+    .servicios__cajas {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /* ----BENEFICIOS---- */
+
+    .beneficios__cajas {
+        max-width: 58em;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: flex-start;
+    }
+
+    .beneficios__content img {
+        width: 4em;
+    }
+
+    /* ----COTIZAR---- */
+
+    .cotizacion h2 {
+        font-size: 1.8em;
+    }
+
+    /* ----MAPA---- */
+
+    .mapa iframe{
+        height: 40em;
+    }
+
+    /* ----FOOTER---- */
+
+    footer {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 4em;
+        padding: 5em;
+    }
+
+    .footer__logo {
+        width: 26em;
+    }
+
+    .footer__logo img {
+        width: 15em;
+        margin: 0;
+    }
+
+    .footer__logo h3 {
+        text-align: left;
+        font-size: .9em;
+    }
+
+    .footer__datos {
+        width: 22em;
+        text-align: left;
+    }
+
+    .datos__conten {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        margin-block: 1em;
+    }
+
+    .datos__conten i {
+        margin-right: .6em;
+    }
+
+    .datos__conten h4 {
+        font-size: .9em;
+    }
+
+    #redesTexto, #appTexto {
+        text-align: left;
+    }
+    
+    .redes__soc {
+        justify-content: flex-start;
+    }
+
+    .redes__app a img {
+        width: 7em;
+    }
+}
