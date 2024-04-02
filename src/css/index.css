@@ -396,6 +396,66 @@ main img, footer img {
     height: 30em;
 }
 
+/* ----TERMINOS---- */
+
+.terminos {
+    padding: 12em 1.8em 6em 1.8em;
+}
+
+.terminos h2 {
+    position: relative;
+    margin-bottom: 3em;
+    text-align: center;
+    font-size: 1.5em;
+    color: var(--azul-oscuro);
+}
+
+.terminos h2::after {
+    content: "";
+    position: absolute;
+    top: 1.6em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4em;
+    height: .120em;
+    background: var(--anaranjado);
+}
+
+.terminos h3 {
+    color: var(--azul-oscuro);
+}
+
+.terminos p {
+    font-size: .9em;
+    line-height: 1.7em;
+}
+
+.terminos ol, .terminos ul {
+    margin-left: 2em;
+    font-size: .9em;
+    line-height: 1.7em;
+}
+
+.terminos a {
+    display: block;
+    width: 16em;
+    padding: .8em 2em;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 auto;
+    background: var(--anaranjado);
+    color: var(--blanco);
+    transition: .4s;
+}
+
+.terminos a:hover {
+    background: var(--azul-oscuro);
+}
+
+.terminos a i {
+    margin-right: .4em;
+}
+
 /* ----FOOTER---- */
 
 footer {
@@ -420,6 +480,20 @@ footer {
     text-align: center;
     font-size: 1em;
     font-weight: 400;
+}
+
+.footer__logo #linkTerm {
+    display: block;
+    width: 14em;
+    margin: 2em auto 0 auto;
+    color: var(--blanco);
+    font-size: .9em;
+    text-align: center;
+    transition: .4s;
+}
+
+.footer__logo #linkTerm:hover {
+    color: var(--anaranjado);
 }
 
 .footer__datos {
@@ -635,6 +709,11 @@ footer {
         height: 40em;
     }
 
+    .terminos {
+        max-width: 70em;
+        margin: 0 auto;
+    }
+
     /* ----FOOTER---- */
 
     footer {
@@ -656,6 +735,11 @@ footer {
     .footer__logo h3 {
         text-align: left;
         font-size: .9em;
+    }
+
+    .footer__logo #linkTerm {
+        margin: 3em 0 0 0;
+        text-align: left;
     }
 
     .footer__datos {
