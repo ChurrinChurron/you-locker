@@ -482,17 +482,22 @@ footer {
     font-weight: 400;
 }
 
-.footer__logo #linkTerm {
+.logo__linkDatos {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo__linkDatos a {
     display: block;
-    width: 14em;
+    width: 13em;
     margin: 2em auto 0 auto;
     color: var(--blanco);
-    font-size: .9em;
+    font-size: .850em;
     text-align: center;
     transition: .4s;
 }
 
-.footer__logo #linkTerm:hover {
+.logo__linkDatos a:hover {
     color: var(--anaranjado);
 }
 
@@ -737,9 +742,14 @@ footer {
         font-size: .9em;
     }
 
-    .footer__logo #linkTerm {
+    .logo__linkDatos {
+        flex-direction: row;
+    }
+
+    .logo__linkDatos a {
         margin: 3em 0 0 0;
         text-align: left;
+        font-size: .760em;
     }
 
     .footer__datos {
